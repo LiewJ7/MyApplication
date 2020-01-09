@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="topicTitile">Topic Title:</string>
+    <string name="topicContent">Topic Content:</string>
+    <string name="topicTitleHint">Enter your topic title</string>
+    <string name="topicContentHint">Enter Your Description</string>
+    <string name="createMomentTitle">Create Moment Post</string>
+    <string name="post">Post</string>
+    <string name="error_value_required">This value is required</string>
+    <string name="image">Upload your receipt or draft of planning</string>
+    <string name="url_server">https://savekawkaw.000webhostapp.com/API/</string>
+    <string name="url_Credit_create">Credit/create.php</string>
+    <string name="url_topic_create">topic/create.php</string>
+    <string name="url_topic_read">topic/read.php</string>
+    <string name="upload">Upload</string>
+    <string name="sync">sync</string>
+</resources>
