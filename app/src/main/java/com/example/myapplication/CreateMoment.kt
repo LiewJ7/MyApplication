@@ -92,8 +92,6 @@ class CreateMoment : AppCompatActivity() {
 
         setResult(Activity.RESULT_OK, intent)
 
-        finish()
-
     }
     companion object{
         const val EXTRA_TOPIC = "com.example.webdb.TOPIC"

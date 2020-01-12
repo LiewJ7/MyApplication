@@ -22,16 +22,16 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     private val REQUEST_CODE = 1
-    lateinit var momentList: ArrayList<Moment>
+    lateinit var topicList: ArrayList<Topic>
     lateinit var adapter: MomentListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        momentList = ArrayList<Moment>()
+        topicList = ArrayList<Topic>()
         adapter = MomentListAdapter(this)
-        adapter.setMoments(momentList)
+        adapter.setTopic(topicList)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerView.adapter = adapter
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //Delete all user records
-        momentList.clear()
+        topicList.clear()
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
@@ -81,9 +81,9 @@ class MainActivity : AppCompatActivity() {
                         val size: Int = jsonArray.length()
                         for(i in 0..size-1){
                             var jsonUser: JSONObject = jsonArray.getJSONObject(i)
-                            var moment: Moment = Moment(jsonUser.getString("topicID"),jsonUser.getString("topicTitle"),jsonUser.getString("topicContent"))
+                            var topic: Topic = Topic(jsonUser.getString("topicID"),jsonUser.getString("topicTitle"),jsonUser.getString("topicContent"),jsonUser.getString("userTel"))
 
-                            momentList.add(moment)
+                            topicList.add(topic)
                         }
                         Toast.makeText(applicationContext, "Record found :" + size, Toast.LENGTH_LONG).show()
 

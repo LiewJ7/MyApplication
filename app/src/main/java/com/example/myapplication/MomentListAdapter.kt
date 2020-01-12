@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class MomentListAdapter internal constructor(context: Context):
         RecyclerView.Adapter<MomentListAdapter.MomentViewHolder>(){
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var moments = emptyList<Moment>() // Cached copy of user
+    private var topics = emptyList<Topic>() // Cached copy of user
 
     inner class MomentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val topicTitleTextView: TextView = itemView.findViewById(R.id.buttonTitle)
@@ -23,16 +23,16 @@ class MomentListAdapter internal constructor(context: Context):
         return MomentViewHolder(itemView)
     }
 
-    override fun getItemCount()=moments.size;
+    override fun getItemCount()=topics.size;
 
     override fun onBindViewHolder(holder: MomentViewHolder, position: Int) {
-        val current = moments[position]
+        val current = topics[position]
         holder.topicTitleTextView.text = current.topicTitle
 
     }
 
-    internal fun setMoments(moments: List<Moment>) {
-        this.moments = moments
+    internal fun setTopic(topics: List<Topic>) {
+        this.topics = topics
         notifyDataSetChanged()
     }
 
